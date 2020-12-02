@@ -55,4 +55,4 @@ names(unified_table1)<-gsub("angle", "Angle", names(unified_table1))
 names(unified_table1)<-gsub("gravity", "Gravity", names(unified_table1))
 
 Answer<-unified_table1 %>% group_by(subject,activity)%>% summarize_all(funs(mean))
-str(Answer)
+write.table(Answer, "FinalData.txt", row.name=FALSE)
